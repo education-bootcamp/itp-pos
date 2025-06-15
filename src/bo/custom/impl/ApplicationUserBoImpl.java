@@ -20,4 +20,17 @@ public class ApplicationUserBoImpl implements ApplicationUserBo {
                 )
         );
     }
+
+    @Override
+    public ApplicationUserDto login(String email) throws SQLException, IOException, ClassNotFoundException {
+        ApplicationUser selectedUser = applicationUserDao.findByEmail(email);
+        if(selectedUser == null){
+            return null;
+        }
+        return new ApplicationUserDto(
+                selectedUser.getEmail(),
+                selectedUser.getFullName(),
+                selectedUser.getPassword()
+        );
+    }
 }
