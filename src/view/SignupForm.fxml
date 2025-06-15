@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="623.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.">
+<AnchorPane prefHeight="623.0" prefWidth="942.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignupFormController">
    <children>
       <ImageView fitHeight="623.0" fitWidth="942.0" layoutX="-200.0" pickOnBounds="true">
          <image>
@@ -24,7 +24,7 @@
       </ImageView>
       <AnchorPane layoutX="24.0" layoutY="29.0" opacity="0.99" prefHeight="569.0" prefWidth="435.0" style="-fx-background-color: #2c3e50;">
          <children>
-            <Label layoutX="187.0" layoutY="31.0" text="LOGIN" textFill="WHITE">
+            <Label layoutX="180.0" layoutY="32.0" text="SIGNUP" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -39,12 +39,12 @@
                   <Font size="16.0" />
                </font>
             </PasswordField>
-            <Button layoutX="27.0" layoutY="293.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="383.0" style="-fx-background-color: #374BFC;" text="Login" textFill="WHITE">
+            <Button layoutX="27.0" layoutY="293.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="383.0" style="-fx-background-color: #374BFC;" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="26.0" layoutY="411.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="383.0" style="-fx-background-color: #0D187D;" text="Create Account" textFill="WHITE">
+            <Button layoutX="26.0" layoutY="411.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="383.0" style="-fx-background-color: #0D187D;" text="Already have an account?" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -56,6 +56,11 @@
             </Label>
             <Separator layoutX="245.0" layoutY="382.0" prefHeight="7.0" prefWidth="165.0" />
             <Separator layoutX="27.0" layoutY="382.0" prefHeight="7.0" prefWidth="165.0" />
+            <TextField layoutX="26.0" layoutY="101.0" prefHeight="43.0" prefWidth="383.0" promptText="Full Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
    </children>
