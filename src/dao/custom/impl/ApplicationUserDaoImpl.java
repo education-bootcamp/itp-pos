@@ -29,7 +29,7 @@ public class ApplicationUserDaoImpl implements ApplicationUserDao {
     }
 
     @Override
-    public boolean delete(ApplicationUser entity) throws IOException {
+    public boolean delete(String id) throws IOException {
         return false;
     }
 

@@ -1,5 +1,5 @@
 package bo;
 
 public enum BoType {
-    APPLICATION_USER
+    APPLICATION_USER,CUSTOMER
 }
