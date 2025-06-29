@@ -16,7 +16,17 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public List<Product> findAll(String searchText) throws SQLException, ClassNotFoundException {
         searchText= "%"+searchText+"%";
-        return CrudUtil.execute("SELECT * FROM product WHERE description LIKE ?",  searchText);
+        ResultSet resultSet =  CrudUtil.execute("SELECT * FROM product WHERE description LIKE?",  searchText);
+        ArrayList<Product> products = new ArrayList<>();
+        while (resultSet.next()){
+            products.add( new Product(
+                    resultSet.getString(1),
+                    resultSet.getInt(2),
+                    resultSet.getDouble(3),
+                    resultSet.getString(4)
+            ));
+        }
+        return products;
     }
 
     @Override

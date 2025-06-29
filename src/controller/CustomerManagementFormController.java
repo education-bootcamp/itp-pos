@@ -164,6 +164,7 @@ public class CustomerManagementFormController {
         txtSalary.clear();
         txtAddress.clear();
         btnSave.setText("Save Customer");
+        txtId.setText(UUID.randomUUID().toString());
     }
 
     public void backToHomeOnAction(ActionEvent actionEvent) throws IOException {
