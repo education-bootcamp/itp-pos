@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -17,8 +18,14 @@
          </font>
       </Label>
       <Separator layoutX="14.0" layoutY="49.0" prefHeight="0.0" prefWidth="927.0" />
-      <Button layoutX="870.0" layoutY="16.0" mnemonicParsing="false" prefWidth="70.0" text="Logout" />
-      <Button layoutX="752.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Backup File" />
+      <Button layoutX="870.0" layoutY="16.0" mnemonicParsing="false" prefWidth="70.0" text="Logout">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="752.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Backup File">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Separator layoutX="734.0" layoutY="14.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="0.0" />
       <AnchorPane layoutX="645.0" layoutY="63.0" prefHeight="120.0" prefWidth="296.0" style="-fx-background-color: #660038;">
          <children>
@@ -28,8 +35,11 @@
                </font>
             </Label>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
-      <AnchorPane layoutX="330.0" layoutY="63.0" prefHeight="120.0" prefWidth="296.0" style="-fx-background-color: #084E15;">
+      <AnchorPane layoutX="330.0" layoutY="63.0" onMouseClicked="#openProductManagementOnAction" prefHeight="120.0" prefWidth="296.0" style="-fx-background-color: #084E15;">
          <children>
             <Label layoutX="56.0" layoutY="47.0" text="Product Management" textFill="WHITE">
                <font>
@@ -37,6 +47,9 @@
                </font>
             </Label>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="63.0" onMouseClicked="#openCustomerForm" prefHeight="120.0" prefWidth="296.0" style="-fx-background-color: #158EFF;">
          <children>
@@ -44,6 +57,9 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Label>
          </children>
       </AnchorPane>
@@ -55,6 +71,9 @@
                </font>
             </Label>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <AnchorPane layoutX="14.0" layoutY="202.0" prefHeight="120.0" prefWidth="296.0" style="-fx-background-color: #9C6000;">
          <children>
@@ -62,6 +81,9 @@
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Label>
          </children>
       </AnchorPane>

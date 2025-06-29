@@ -7,10 +7,15 @@ import dto.CustomerDto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import view.CustomerTM;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import view.tm.CustomerTM;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -29,6 +34,7 @@ public class CustomerManagementFormController {
     public TableColumn colSalary;
     public TableColumn colOption;
     public TextField txtSearch;
+    public AnchorPane container;
 
     private String searchText="";
 
@@ -158,5 +164,15 @@ public class CustomerManagementFormController {
         txtSalary.clear();
         txtAddress.clear();
         btnSave.setText("Save Customer");
+    }
+
+    public void backToHomeOnAction(ActionEvent actionEvent) throws IOException {
+            setUi("DashboardForm");
+    }
+    private void setUi(String path) throws IOException {
+        Stage stage = (Stage) container.getScene().getWindow();
+        stage.setScene(
+                new Scene(FXMLLoader.load(getClass().getResource("../view/" + path + ".fxml")))
+        );
     }
 }

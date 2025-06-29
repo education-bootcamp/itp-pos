@@ -1,4 +1,4 @@
-package view;
+package view.tm;
 
 import javafx.scene.control.ButtonBar;
 

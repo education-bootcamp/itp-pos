@@ -22,4 +22,8 @@ public class DashboardFormController {
                 new Scene(FXMLLoader.load(getClass().getResource("../view/" + path + ".fxml")))
         );
     }
+
+    public void openProductManagementOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("ProductManagementForm");
+    }
 }
