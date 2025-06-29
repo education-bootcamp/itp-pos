@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CustomerBoImpl implements CustomerBo {
 
@@ -19,17 +20,13 @@ public class CustomerBoImpl implements CustomerBo {
 
     @Override
     public boolean save(CustomerDto dto) throws SQLException, IOException, ClassNotFoundException {
-        return customerDao.create(
-                new Customer(dto.getId(),dto.getName(),dto.getAddress(), dto.getSalary())
-        );
+        return customerDao.create(toCustomer(dto));
     }
 
     @Override
     public CustomerDto finById(String id) throws SQLException, IOException, ClassNotFoundException {
         Customer cus = customerDao.findById(id);
-        return cus!=null?new CustomerDto(
-                cus.getId(),cus.getName(),cus.getAddress(),cus.getSalary()
-        ):null;
+        return cus!=null?toCustomerDto(cus):null;
     }
 
     @Override
@@ -39,20 +36,30 @@ public class CustomerBoImpl implements CustomerBo {
 
     @Override
     public boolean update(CustomerDto dto) throws SQLException, IOException, ClassNotFoundException {
-        return customerDao.update(
-                new Customer(dto.getId(),dto.getName(),dto.getAddress(), dto.getSalary())
-        );
+        return customerDao.update(toCustomer(dto));
     }
 
     @Override
     public List<CustomerDto> search(String searchText) throws SQLException, ClassNotFoundException {
-        List<Customer> all = customerDao.findAll(searchText);
-        List<CustomerDto> dtos = new ArrayList<>();
-        for (Customer customer : all) {
-            dtos.add(new CustomerDto(
-                    customer.getId(),customer.getName(), customer.getAddress(),customer.getSalary()
-            ));
-        }
-        return dtos;
+
+        return customerDao.
+                findAll(searchText).stream()
+                .map(this::toCustomerDto).collect(Collectors.toList());
     }
+
+    private CustomerDto toCustomerDto(Customer customer){
+        if(customer == null){
+            return null;
+        }
+        return new CustomerDto(
+                customer.getId(),customer.getName(), customer.getAddress(),customer.getSalary()
+        );
+    }
+    private Customer toCustomer(CustomerDto dto){
+        if(dto == null){
+            return null;
+        }
+       return new Customer(dto.getId(),dto.getName(),dto.getAddress(), dto.getSalary());
+    }
+
 }

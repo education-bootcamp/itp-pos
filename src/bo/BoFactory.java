@@ -2,6 +2,7 @@ package bo;
 
 import bo.custom.impl.ApplicationUserBoImpl;
 import bo.custom.impl.CustomerBoImpl;
+import bo.custom.impl.ProductBoImpl;
 import dao.DaoType;
 import dao.custom.impl.ApplicationUserDaoImpl;
 
@@ -18,6 +19,7 @@ public class BoFactory {
         switch (boType) {
             case APPLICATION_USER:return (T) new ApplicationUserBoImpl();
             case CUSTOMER:return (T) new CustomerBoImpl();
+            case PRODUCT:return (T) new ProductBoImpl();
             default:return null;
         }
     }
