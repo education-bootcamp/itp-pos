@@ -41,7 +41,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onAction="#saveProductOnAction" text="Save Product">
+      <Button fx:id="btnSave" layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onAction="#saveProductOnAction" text="Save Product">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
